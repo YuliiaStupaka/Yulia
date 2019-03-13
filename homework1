@@ -1,0 +1,22 @@
+Написать программу, которая считывает 5-тизначное число с клавиатуры и выводит цифры, из которого оно состоит.
+
+package homework1;
+import java.util.Scanner;
+public class Homework1 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Зчитується число: ");
+        int number = sc.nextInt();
+        int partOne = number / 10000;
+        System.out.println("Виводиться:");
+        System.out.println(partOne);
+        int partTwo = number % 10000 / 1000;
+        System.out.println(partTwo);
+        int partThree = number % 1000 / 100;
+        System.out.println(partThree);
+        int partFour = number % 100 / 10;
+        System.out.println(partFour);
+        int partFive = number % 10;
+        System.out.println(partFive);
+    }
+}
