@@ -1,0 +1,14 @@
+Написать программу, которая вычислит и выведет на экран длину окружности, если ее радиус считывается с клавиатуры.
+
+package homework3;
+import java.util.Scanner;
+public class Homework3 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Введіть радіус кола: ");
+        double radiusCircle = sc.nextDouble();
+        double lengthCircle = 2*Math.PI*radiusCircle;
+        System.out.println("Довжина кола з радуісом "+radiusCircle+" дорівнює "
+                +lengthCircle+", при округленні "+String.format("%1.2f", lengthCircle).replace(',', '.')+".");
+    }
+}
