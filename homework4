@@ -1,0 +1,33 @@
+/*
+ * Написать программу, которая считывает 4 числа с клавиатуры и выведет на экран самое большое из них. 
+ */
+package homework4;
+import java.util.Scanner;
+public class Homework4 {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int a;
+        System.out.print("Введіть перше число: ");
+        a=sc.nextInt();
+        int b;
+        System.out.print("Введіть друге число: ");
+        b=sc.nextInt();
+        int c;
+        System.out.print("Введіть третє число: ");
+        c=sc.nextInt();
+        int d;
+        System.out.print("Введіть четверте число: ");
+        d=sc.nextInt();
+        int max=a;
+        if(b>max){
+            max=b;
+        } 
+        if(c>max){
+            max=c;
+        }
+        if(d>max){
+            max=d;
+        }              
+        System.out.println("Максимельне число серед введених чисел дорівнює "+max+".");
+    }
+}
