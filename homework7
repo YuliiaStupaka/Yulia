@@ -1,0 +1,23 @@
+/*
+ * Треугольник существует только тогда, когда сумма любых двух его сторон больше третьей. 
+ * Дано: a, b, c – стороны предполагаемого треугольника. Напишите программу, которая укажет, 
+ * существует такой треугольник или нет.
+ */
+package homework7;
+import java.util.Scanner;
+public class Homework7 {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Введіть сторону трикутника a: ");
+        double a=sc.nextDouble();
+        System.out.print("Введіть сторону трикутника b: ");
+        double b=sc.nextDouble();
+        System.out.print("Введіть сторону трикутника c: ");
+        double c=sc.nextDouble();
+        if(a+b>c && b+c>a && a+c>b){
+            System.out.println("Трикутник зі сторонами "+a+", "+b+", "+c+", існує!");
+        } else {
+            System.out.println("Трикутник зі сторонами "+a+", "+b+", "+c+", не існує!");
+        }
+    }
+}
