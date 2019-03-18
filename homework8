@@ -1,0 +1,26 @@
+/*
+ * Есть круг с центром в начале координат и радиусом 4. 
+ * Пользователь вводит с клавиатуры координаты точки x и y. 
+ * Написать программу, которая определит, лежит ли эта точка внутри круга или нет.
+ */
+package homework8;
+import java.util.Scanner;
+public class Homework8 {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Введіть радіус кола: ");
+        double radiusCircle=sc.nextDouble();
+        System.out.print("Введіть одну координату точки, а саме х: ");
+        double x=sc.nextDouble();
+        System.out.print("Введіть другу координату точки, а саме y: ");
+        double y=sc.nextDouble();
+        double distanceToCenter=Math.sqrt(x*x+y*y);
+        if(distanceToCenter<=radiusCircle){
+            System.out.println("Точка з координатами ("+x+","+y+") розташована всередині кола, "
+                    + "радіус якого "+radiusCircle+" і центр на початку координат.");
+        } else{
+            System.out.println("Точка з координатами ("+x+","+y+") розташована поза колом, "
+                    + "радіус якого "+radiusCircle+" і центр на початку координат.");
+        }
+    }
+}
