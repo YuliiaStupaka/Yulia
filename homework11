@@ -1,0 +1,26 @@
+/*
+ * С клавиатуры вводиться шестизначное число. 
+ * Проверить, является ли оно палиндромом. Примечание: палиндромом называется число, 
+ * слово или текст, которые одинаково читаются слева направо и справа налево.
+ */
+package homework11;
+import java.util.Scanner;
+public class Homework11 {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Введіть шестизначне число: ");
+        int number=sc.nextInt();
+        int partOne=number/100000;
+        int partTwo=number%100000/10000;
+        int partThree=number%10000/1000;
+        int partFour=number%1000/100;
+        int partFive=number%100/10;
+        int partSix=number%10;
+        if(partOne==partSix && partTwo==partFive && partThree==partFour){
+            System.out.println("Шестизначне число "+number+" є паліндромом!");
+        } else {
+            System.out.println("Шестизначне число "+number+" не є паліндромом! "
+                    + "Спробуй інше шестизначне число!");
+        }
+    }
+}
