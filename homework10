@@ -1,0 +1,37 @@
+/*
+ * Проверить, является ли четырехзначное число счастливым билетом. 
+ * Примечание: счастливым билетом называется число, в котором – при четном количестве цифр 
+ * в числе сумма цифр его левой половины равна сумме цифр его правой половины. 
+ */
+package homework10;
+import java.util.Scanner;
+public class Homework10 {
+    public static void main(String[] args) {
+       Scanner sc=new Scanner(System.in);
+       System.out.print("Введіть чотиризначне число: ");
+       int ticket=sc.nextInt();
+       int partOne=ticket/1000;
+       int partTwo=ticket%1000/100;
+       int partThree=ticket%100/10;
+       int partFour=ticket%10;
+       int totalLeft=partOne+partTwo;
+       int totalRight=partThree+partFour;
+       int partOneLeft=totalLeft/10;
+       int partTwoLeft=totalLeft%10;
+       int partOneRight=totalRight/10;
+       int partTwoRight=totalRight%10;
+       int totalpartLeft=partOneLeft+partTwoLeft;
+       int totalpartRight=partOneRight+partTwoRight;
+       if(1000<=ticket && ticket<10000){
+           if(totalLeft==totalRight){
+               System.out.println("Чотиризначне число "+ticket+" є щасливим білетом!");
+           } else if(totalpartLeft==totalpartRight){
+               System.out.println("Чотиризначне число "+ticket+" є подвійним щасливим білетом!");
+           } else{
+               System.out.println("Чотиризначне число "+ticket+" не є щасливим білетом! Спробуйте інше чотиризначне число!");
+           }
+        } else{
+            System.out.println("Введене число "+ticket+" не є чотиризначним числом!");
+        }
+    }
+}
