@@ -1,0 +1,46 @@
+/*
+ * Дан треугольник с координатами вершин А(0,0), В(4,4), С(6,1). 
+ * Пользователь вводит с клавиатуры координаты точки х и у. 
+ * Написать программу, которая определит, лежит ли эта точка внутри треугольника или нет.
+ */
+package homework9;
+import java.util.Scanner;
+public class Homework9 {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        double xA=0;
+        double yA=0;
+        double xB=4;
+        double yB=4;
+        double xC=6;
+        double yC=1;
+        double sAB=Math.sqrt((xB-xA)*(xB-xA)+(yB-yA)*(yB-yA));
+        double sBС=Math.sqrt((xC-xB)*(xC-xB)+(yC-yB)*(yC-yB));
+        double sСA=Math.sqrt((xA-xC)*(xA-xC)+(yA-yC)*(yA-yC));
+        double squareABC=Math.sqrt(((sAB+sBС+sСA)/2)*(((sAB+sBС+sСA)/2)-sAB)*
+                (((sAB+sBС+sСA)/2)-sBС)*(((sAB+sBС+sСA)/2)-sСA));
+        System.out.print("Введіть одну координату точки, а саме х: ");
+        double xP=sc.nextDouble();
+        System.out.print("Введіть другу координату точки, а саме y: ");
+        double yP=sc.nextDouble();
+        double sAP=Math.sqrt((xP-xA)*(xP-xA)+(yP-yA)*(yP-yA));
+        double sBP=Math.sqrt((xP-xB)*(xP-xB)+(yP-yB)*(yP-yB));
+        double sCP=Math.sqrt((xP-xC)*(xP-xC)+(yP-yC)*(yP-yC));
+        double squareABP=Math.sqrt(((sAB+sBP+sAP)/2)*(((sAB+sBP+sAP)/2)-sAB)*
+                (((sAB+sBP+sAP)/2)-sBP)*(((sAB+sBP+sAP)/2)-sAP));
+        double squareAPC=Math.sqrt(((sAP+sCP+sСA)/2)*(((sAP+sCP+sСA)/2)-sAP)*
+                (((sAP+sCP+sСA)/2)-sCP)*(((sAP+sCP+sСA)/2)-sСA));
+        double squarePBC=Math.sqrt(((sBP+sBС+sCP)/2)*(((sBP+sBС+sCP)/2)-sBP)*
+                (((sBP+sBС+sCP)/2)-sBС)*(((sBP+sBС+sCP)/2)-sCP));
+        double squareP=squareABP+squareAPC+squarePBC;
+        System.out.println("Площа трикутника ABC дорівнює "+squareABC+".");
+        System.out.println("Загальна площа трикутників, утворених координатами точки дорівнює "+squareP+".");
+        if(squareP<=squareABC){
+            System.out.println("Точка з координатами ("+xP+","+yP+") розташована всередині трикутника, "
+                    + "координатами якого є вершини А(0,0), B(4,4), C(6,1).");
+        } else{
+            System.out.println("Точка з координатами ("+xP+","+yP+") розташована поза трикутником, "
+                    + "координатами якого є вершини А(0,0), B(4,4), C(6,1).");
+        }
+    }
+}
