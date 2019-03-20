@@ -1,0 +1,25 @@
+/*
+ * С помощью циклов нарисовать «обои». 
+ * Причем количество полос должно вводиться с клавиатуры.
+ */
+package homework12;
+import java.util.Scanner;
+public class Homework12 {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Введіть кількість смуг: ");
+        int numberLanes=sc.nextInt();
+        System.out.print("Введіть довжину смуг (кількість рядків): ");
+        int numberRows=sc.nextInt();
+        for(int i=0; i<numberRows; i++){
+            for(int j=0; j<numberLanes; j++){
+                if(j%2==0){
+                    System.out.print("***");
+                } else{
+                    System.out.print("+++");
+                }
+            }
+            System.out.println();
+        }
+    }
+}
