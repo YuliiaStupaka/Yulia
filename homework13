@@ -1,0 +1,23 @@
+/*
+ * Вычислить с помощью цикла факториал числа – n, введенного с клавиатуры (4<n<16). 
+ * Факториал числа – это произведение всех чисел от этого числа до 1.
+ */
+package homework13;
+import java.util.Scanner;
+public class Homework13 {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Введіть число: ");
+        int nFact=sc.nextInt();
+        long fact=1;
+        for(int i=1; i<=nFact; i++){
+            fact=fact*i;
+            }
+        if(4<nFact && nFact<16){
+            System.out.println(nFact+"! = "+fact); 
+        } else{
+            System.out.println("Число "+nFact+" знаходиться не в межах від 5 до 15 включно! "
+                    + "Введіть число в даних межах!");
+        }
+    }
+}
