@@ -1,0 +1,19 @@
+/*
+ * Дан массив {0, 5, 2, 4, 7, 1, 3, 19}. 
+ * Написать программу для подсчета нечетных цифр в нем.
+ */
+package homework17;
+import java.util.Arrays;
+public class Homework17 {
+    public static void main(String[] args) { 
+        int [] array=new int []{0,5,2,4,7,1,3,19};
+        int numberOdd=0;
+        for(int i=0; i<array.length; i++){
+            if(array[i]%2!=0){
+                numberOdd++;
+            }
+        }
+        System.out.println("В масиві "+Arrays.toString(array)+" кількість "
+                + "непарних чисел становить "+numberOdd+".");
+    }
+}
