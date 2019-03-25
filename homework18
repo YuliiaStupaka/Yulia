@@ -1,0 +1,20 @@
+/*
+ * Написать код для возможности создания массива целых чисел 
+ *(размер вводиться с клавиатуры) и возможности заполнения каждого его элемента вручную. 
+ * Выведите этот массив на экран.
+ */
+package homework18;
+import java.util.Scanner;
+import java.util.Arrays;
+public class Homework18 {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Введіть кількість елементів в масиві: ");
+        int [] array=new int[sc.nextInt()];
+        System.out.print("Введіть елементи масиву: ");
+        for(int i=0; i<array.length; i++){
+            array[i]=sc.nextInt();
+        }
+        System.out.println(Arrays.toString(array));  
+    }
+}
