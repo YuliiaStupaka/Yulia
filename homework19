@@ -1,0 +1,31 @@
+/*
+ * Создать массив случайных чисел (размером 15 элементов). 
+ * Создайте второй массив в два раза больше, первые 15 элементов 
+ * должны быть равны элементам первого массива, а остальные элементы 
+ * заполнить удвоенным значением начальных.
+ */
+package homework19;
+import java.util.Scanner;
+import java.util.Arrays;
+import java.util.Random;
+public class Homework19 {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        Random rn=new Random();
+        System.out.print("Введіть кількість елементів в масиві: ");
+        int[] array=new int[sc.nextInt()];
+        for(int i=0; i<array.length; i++){
+            array[i]=rn.nextInt(10);
+        }
+        System.out.println("Масив випадкових чисел: "+Arrays.toString(array));
+        int [] resultArray=new int[array.length*2];
+        resultArray=Arrays.copyOf(array,array.length*2);
+                
+        //System.arraycopy(array, 0, resultArray, 0, array.length);
+        for(int j=0; j<array.length; j++){
+                resultArray[j+array.length]=2*array[j];
+        }
+        System.out.println("Масив випадкових чисел та їх подвійних значень: "
+                +Arrays.toString(resultArray));
+    }
+}
