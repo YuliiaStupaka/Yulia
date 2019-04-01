@@ -1,0 +1,21 @@
+/*
+ * Ввести с консоли число в бинарном формате. Перевести его в десятичный формат и вывести на экран.
+ */
+package homework38;
+import java.util.Scanner;
+public class Homework38 {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Введіть число в двійковій системі числення: ");
+        String text=sc.nextLine();
+        try{
+            int number=Integer.parseInt(text,2);
+            System.out.println("В десятковій системі числення: "+number);
+            System.out.println("У вісімковій системі числення: "+Integer.toOctalString(number));
+            System.out.println("У шістнадцятковій системі числення: "+Integer.toHexString(number));
+            System.out.println("Знову у двійковій системі числення: "+Integer.toBinaryString(number));
+        } catch(NumberFormatException e) {
+            System.out.println("Введений текст "+text+" не є числом в двійковій системі числення!");
+        }
+    }
+}
