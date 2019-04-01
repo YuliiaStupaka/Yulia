@@ -1,0 +1,27 @@
+/*
+ * Написать программу, которая вернет количество миллисекунд прошедших от такого же числа,
+ * но в прошлом месяце до сегодняшней даты.
+ */
+package homework36;
+import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+public class Homework36 {
+    public static void main(String[] args) {
+        Date date = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy  HH:mm:ss");
+        String text=sdf.format(date);
+        long time=date.getTime();
+        System.out.println("Сьогодні "+text+" кількість мілісекунд від 01.01.1970 становить "+time);
+        
+        Calendar clAgo=Calendar.getInstance();
+        clAgo.add(Calendar.MONTH, -1);
+        Date dateAgo=clAgo.getTime();
+        String textAgo=sdf.format(dateAgo);
+        long timeAgo=dateAgo.getTime();
+        System.out.println("Місяць тому "+textAgo+" кількість мілісекунд від 01.01.1970 становить "+timeAgo);
+        
+        System.out.println("Кількість мілісекунд, які пройшли від сьогодні до цього дня місяць назад "
+                + "становить "+(time-timeAgo));
+    }    
+}
